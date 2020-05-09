@@ -1,0 +1,101 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "quiz bianchi",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "ca suffit",
+                        "arrete",
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AnswerIntent",
+                    "slots": [
+                        {
+                            "name": "answer",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "je crois que ca fait {answer}",
+                        "peut être {answer}",
+                        "c'est {answer}",
+                        "c'est le {answer}",
+                        "je pense que c'est {answer}",
+                        "ca fait {answer}",
+                        "{answer}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "AnswerIntent",
+                    "delegationStrategy": "SKILL_RESPONSE",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "answer",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.391614599408.1041459315832"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isLessThan",
+                                    "prompt": "Slot.Validation.391614599408.1041459315832.778056692281",
+                                    "value": "100"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.391614599408.1041459315832",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "oups, j'attends un nombre entier"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "s'il te plait, il me faut un nombre entier"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.391614599408.1041459315832.778056692281",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Il me faut une valeur plus petite que cent"
+                    }
+                ]
+            }
+        ]
+    }
+}

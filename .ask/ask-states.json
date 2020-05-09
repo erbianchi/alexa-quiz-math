@@ -1,0 +1,30 @@
+{
+  "askcliStatesVersion": "2020-03-31",
+  "profiles": {
+    "default": {
+      "skillId": "amzn1.ask.skill.a5e1cbf3-2c0b-40d4-8adf-f6709358cc21",
+      "skillInfrastructure": {
+        "@ask-cli/cfn-deployer": {
+          "deployState": {
+            "default": {
+              "s3": {
+                "bucket": "ask-math-quiz-default-eucentral1-1589042413568",
+                "key": "endpoint/build.zip",
+                "objectVersion": "Pbn0Eo6e3enofmq1saYsnFxBXyZvi4zc"
+              },
+              "stackId": "arn:aws:cloudformation:eu-central-1:913120230671:stack/ask-math-quiz-default-skillStack-1589042413568/c244bca0-9213-11ea-94dc-06a85d409ac4"
+            }
+          }
+        }
+      },
+      "skillMetadata": {
+        "lastDeployHash": "ZaRQOZUyCbpI0i5dqFyZNyWHLUA="
+      },
+      "code": {
+        "default": {
+          "lastDeployHash": "zKY2dz91tG4/V3rRgPgq4YD/exE="
+        }
+      }
+    }
+  }
+}
